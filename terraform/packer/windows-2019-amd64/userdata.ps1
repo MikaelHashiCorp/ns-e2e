@@ -117,7 +117,7 @@ Try {
     throw
 }
 
-md "C:\Users\Administrator\.ssh\"
+mkdir "C:\Users\Administrator\.ssh\"
 
 $myKey = "C:\Users\Administrator\.ssh\authorized_keys"
 $adminKey = "C:\ProgramData\ssh\administrators_authorized_keys"
