@@ -9,8 +9,6 @@ if (!$RunningAsAdmin) {
   exit 1
 }
 
-$global:ProgressPreference = "SilentlyContinue"
-
 # Force TLS1.2
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
@@ -20,7 +18,7 @@ Write-Host "(host) Running User Data Script"
 Set-ExecutionPolicy Unrestricted -Scope LocalMachine -Force -ErrorAction Ignore
 
 # Don't set this before Set-ExecutionPolicy as it throws an error
-#$ErrorActionPreference = "stop"
+$ErrorActionPreference = "stop"
 
 # -------------------------------------------
 # WinRM
@@ -53,15 +51,10 @@ cmd.exe /c winrm set "winrm/config/service/auth" '@{CredSSP="true"}'
 cmd.exe /c winrm set "winrm/config/listener?Address=*+Transport=HTTPS" "@{Port=`"5986`";Hostname=`"packer`";CertificateThumbprint=`"$($Cert.Thumbprint)`"}"
 cmd.exe /c netsh advfirewall firewall set rule group="remote administration" new enable=yes
 cmd.exe /c netsh firewall add portopening TCP 5986 "Port 5986"
-
-# Configure UAC to allow privilege elevation in remote shells
-$Key = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
-$Setting = 'LocalAccountTokenFilterPolicy'
-Set-ItemProperty -Path $Key -Name $Setting -Value 1 -Force
-
 cmd.exe /c net stop winrm
 cmd.exe /c sc config winrm start= auto
 cmd.exe /c net start winrm
+
 
 # -------------------------------------------
 # Disks and Directories
@@ -102,11 +95,16 @@ Try {
     New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' `
       -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22 -ErrorAction Stop
 
+    # Note: there appears to be a regression in recent versions of
+    # Terraform for file provisioning over ssh for Windows with
+    # powershell as the default shell
+    # See: https://github.com/hashicorp/terraform/issues/30661
+    #
     # Set powershell as the OpenSSH login shell
-    New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" `
-      -Name DefaultShell `
-      -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" `
-      -PropertyType String -Force -ErrorAction Stop
+    # New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" `
+    #   -Name DefaultShell `
+    #   -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" `
+    #   -PropertyType String -Force -ErrorAction Stop
 
     Write-Output "Installed OpenSSH."
 
@@ -117,7 +115,7 @@ Try {
     throw
 }
 
-mkdir "C:\Users\Administrator\.ssh\"
+md "C:\Users\Administrator\.ssh\"
 
 $myKey = "C:\Users\Administrator\.ssh\authorized_keys"
 $adminKey = "C:\ProgramData\ssh\administrators_authorized_keys"
