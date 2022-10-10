@@ -43,11 +43,11 @@ build {
 
   provisioner "file" {
     destination = "/opt/provision.ps1"
-    source      = "./windows-2019-amd64/provision.ps1"
+    source      = "./windows-2016-amd64/provision.ps1"
   }
 
   provisioner "powershell" {
-    inline = ["/opt/provision.ps1 -nomad_version 1.2.3 -nostart"]
+    inline = ["/opt/provision.ps1 -nomad_version 1.2.6 -nostart"]
   }
 
   # this restart is required for adding the "containers feature", but we can
