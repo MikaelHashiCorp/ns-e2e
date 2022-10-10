@@ -124,3 +124,5 @@ e2e/remotetasks/input/ecs.vars
 
 # local terraform overrides
 *.auto.tfvars
+*.lic
+*.pub
