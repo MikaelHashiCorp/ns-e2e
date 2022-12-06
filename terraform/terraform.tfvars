@@ -3,15 +3,15 @@ instance_type                    = "t3.medium"
 server_count                     = "1"
 client_count_ubuntu_bionic_amd64 = "1"
 client_count_windows_2016_amd64  = "0"
-client_count_windows_2019_amd64  = "1"
+client_count_windows_2019_amd64  = "0"
 profile                          = "dev-cluster"
-name                             = "ns-e2e-mws-83619"
+name                             = "ns-e2e-mws-stage"
 nomad_acls                       = false
-nomad_enterprise                 = false
+nomad_enterprise                 = true
 vault                            = false
 volumes                          = false
 
-nomad_version      = "1.2.6+ent" # default version for deployment
+nomad_version      = ""       # default version for deployment
 nomad_sha          = ""       # overrides nomad_version if set
 nomad_local_binary = ""       # overrides nomad_sha and nomad_version if set
 

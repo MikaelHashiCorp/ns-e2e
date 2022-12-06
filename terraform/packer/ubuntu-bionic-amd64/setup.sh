@@ -4,11 +4,6 @@
 
 set -e
 
-# Will be overwritten at test time with the version specified
-NOMADVERSION=1.2.6
-CONSULVERSION=1.9.0
-VAULTVERSION=1.5.4
-
 NOMAD_PLUGIN_DIR=/opt/nomad/plugins/
 
 mkdir_for_root() {
@@ -42,6 +37,16 @@ sudo apt-get install -y \
 
 # Disable the firewall
 sudo ufw disable || echo "ufw not installed"
+
+# Will be overwritten at test time with the version specified
+
+NOMADVERSION=$(curl -sL https://api.releases.hashicorp.com/v1/releases/nomad/latest | jq -r '.version')
+CONSULVERSION=$(curl -sL https://api.releases.hashicorp.com/v1/releases/consul/latest | jq -r '.version')
+VAULTVERSION=$(curl -sL https://api.releases.hashicorp.com/v1/releases/vault/latest | jq -r '.version')
+
+# NOMADVERSION=1.2.6
+# CONSULVERSION=1.9.0
+# VAULTVERSION=1.5.4
 
 echo "Install Consul"
 curl -fsL -o /tmp/consul.zip \

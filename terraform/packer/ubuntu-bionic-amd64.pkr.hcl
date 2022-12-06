@@ -5,7 +5,7 @@ locals {
 
 source "amazon-ebs" "latest_ubuntu_bionic" {
   ami_name             = "nomad-e2e-ubuntu-bionic-amd64-${local.timestamp}"
-  instance_type        = "t2.medium"
+  instance_type        = "t3.medium"
   region               = "us-east-1"
   ssh_username         = "ubuntu"
 
@@ -13,7 +13,8 @@ source "amazon-ebs" "latest_ubuntu_bionic" {
     filters = {
       architecture                       = "x86_64"
       "block-device-mapping.volume-type" = "gp2"
-      name                               = "ubuntu/images/hvm-ssd/*ubuntu-focal-20.04-amd64-server-*"
+      name                               = "ubuntu/images/hvm-ssd/*ubuntu-bionic-18.04-amd64-server-*"
+      # name                               = "ubuntu/images/hvm-ssd/*ubuntu-focal-20.04-amd64-server-*"
       root-device-type                   = "ebs"
       virtualization-type                = "hvm"
     }
