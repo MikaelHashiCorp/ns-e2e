@@ -20,8 +20,7 @@ resource "aws_instance" "server" {
 
 resource "aws_instance" "client_ubuntu_bionic_amd64" {
   #ami                    = data.aws_ami.ubuntu_bionic_amd64.image_id
-  #ami                    = "ami-0ee8a4aed49bc258a"  # 2022/03/30
-  ami                    = "ami-058a2ccd7936e2bad"  # 2022/05/03
+  ami                    = "ami-065df81c5fb4b315b"  # 2022/12/29
   instance_type          = var.instance_type
   key_name               = module.keys.key_name
   vpc_security_group_ids = [aws_security_group.primary.id]
@@ -41,8 +40,8 @@ resource "aws_instance" "client_ubuntu_bionic_amd64" {
 }
 
 resource "aws_instance" "client_windows_2016_amd64" {
-  ami                    = data.aws_ami.windows_2016_amd64.image_id
-  #ami                    = "ami-02d0cffb9f5c2655b"	
+  # ami                    = data.aws_ami.windows_2016_amd64.image_id
+  ami                    = "ami-0df4c3f341684f1c8"	
   instance_type          = var.instance_type
   key_name               = module.keys.key_name
   vpc_security_group_ids = [aws_security_group.primary.id]
@@ -64,9 +63,6 @@ resource "aws_instance" "client_windows_2016_amd64" {
 resource "aws_instance" "client_windows_2019_amd64" {
   ami                    = "ami-045ebefa6f43595ab"  # 2022/09/07
   # ami                    = "ami-02259e3619ab4b8ce"  # 2022/05/09
-  # ami                    = "ami-018dbd34974bc0884"  # 2022/05/06
-  # ami                    = "ami-0eb094e87f216f6d8"  # 2022/05/03
-  # ami                    = "ami-02d0cffb9f5c2655b"	 # 2021/01/19
   instance_type          = var.instance_type
   key_name               = module.keys.key_name
   vpc_security_group_ids = [aws_security_group.primary.id]

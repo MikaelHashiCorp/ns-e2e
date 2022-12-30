@@ -7,7 +7,7 @@ client_count_windows_2019_amd64  = "0"
 profile                          = "dev-cluster"
 name                             = "ns-e2e-mws-stage"
 nomad_acls                       = false
-nomad_enterprise                 = true
+nomad_enterprise                 = false
 vault                            = false
 volumes                          = false
 
