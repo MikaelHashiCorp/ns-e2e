@@ -60,26 +60,26 @@ resource "aws_instance" "client_windows_2016_amd64" {
   }
 }
 
-resource "aws_instance" "client_windows_2019_amd64" {
-  ami                    = "ami-045ebefa6f43595ab"  # 2022/09/07
-  # ami                    = "ami-02259e3619ab4b8ce"  # 2022/05/09
-  instance_type          = var.instance_type
-  key_name               = module.keys.key_name
-  vpc_security_group_ids = [aws_security_group.primary.id]
-  count                  = var.client_count_windows_2019_amd64
-  iam_instance_profile   = aws_iam_instance_profile.instance_profile.name
-  availability_zone      = var.availability_zone
+# resource "aws_instance" "client_windows_2019_amd64" {
+#   ami                    = "ami-045ebefa6f43595ab"  # 2022/09/07
+#   # ami                    = "ami-02259e3619ab4b8ce"  # 2022/05/09
+#   instance_type          = var.instance_type
+#   key_name               = module.keys.key_name
+#   vpc_security_group_ids = [aws_security_group.primary.id]
+#   count                  = var.client_count_windows_2019_amd64
+#   iam_instance_profile   = aws_iam_instance_profile.instance_profile.name
+#   availability_zone      = var.availability_zone
 
-  user_data = file("${path.root}/userdata/windows-2019.ps1")
+#   user_data = file("${path.root}/userdata/windows-2019.ps1")
 
-  # Instance tags
-  tags = {
-    Name           = "${local.random_name}-client-windows-2019-${count.index}"
-    ConsulAutoJoin = "auto-join"
-    SHA            = var.nomad_sha
-    User           = data.aws_caller_identity.current.arn
-  }
-}
+#   # Instance tags
+#   tags = {
+#     Name           = "${local.random_name}-client-windows-2019-${count.index}"
+#     ConsulAutoJoin = "auto-join"
+#     SHA            = var.nomad_sha
+#     User           = data.aws_caller_identity.current.arn
+#   }
+# }
 
 data "aws_ami" "ubuntu_bionic_amd64" {
   most_recent = true
@@ -101,12 +101,12 @@ data "aws_ami" "windows_2016_amd64" {
   }
 }
 
-data "aws_ami" "windows_2019_amd64" {
-  most_recent = true
-  owners      = ["self"]
+# data "aws_ami" "windows_2019_amd64" {
+#   most_recent = true
+#   owners      = ["self"]
 
-  filter {
-    name   = "name"
-    values = ["nomad-e2e-windows-2019-amd64-*"]
-  }
-}
+#   filter {
+#     name   = "name"
+#     values = ["nomad-e2e-windows-2019-amd64-*"]
+#   }
+# }
