@@ -142,7 +142,8 @@ echo "Configuring dnsmasq"
 # disable systemd-resolved and configure dnsmasq to forward local requests to
 # consul. the resolver files need to dynamic configuration based on the VPC
 # address and docker bridge IP, so those will be rewritten at boot time.
-sudo systemctl disable systemd-resolved.service
+
+# sudo systemctl disable systemd-resolved.service
 sudo mv /tmp/linux/dnsmasq /etc/dnsmasq.d/default
 sudo chown root:root /etc/dnsmasq.d/default
 
@@ -151,6 +152,7 @@ sudo chown root:root /etc/dnsmasq.d/default
 echo 'nameserver 8.8.8.8' > /tmp/resolv.conf
 sudo mv /tmp/resolv.conf /etc/resolv.conf
 
+sudo systemctl restart systemd-resolved
 sudo systemctl restart dnsmasq
 
 echo "Updating boot parameters"

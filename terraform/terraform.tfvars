@@ -1,5 +1,5 @@
 region                           = "us-east-1"
-instance_type                    = "t3.medium"
+instance_type                    = "t3a.medium"
 server_count                     = "1"
 client_count_ubuntu_bionic_amd64 = "1"
 client_count_windows_2016_amd64  = "0"
