@@ -5,7 +5,7 @@ locals {
 
 source "amazon-ebs" "latest_ubuntu_bionic" {
   ami_name             = "nomad-e2e-ubuntu-bionic-amd64-${local.timestamp}"
-  instance_type        = "t3.medium"
+  instance_type        = "t3a.medium"
   region               = "us-east-1"
   ssh_username         = "ubuntu"
 
