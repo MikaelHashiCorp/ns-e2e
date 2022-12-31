@@ -32,7 +32,7 @@ sudo less /lib/systemd/system/ssh.service.d/ec2-instance-connect.conf
 echo "=== apt-get rest of packages ==="
 sudo apt-get install -y \
      software-properties-common \
-     dnsmasq unzip tree redis-tools jq curl tmux nfs-common \
+     dnsmasq unzip -o tree redis-tools jq curl tmux nfs-common \
      apt-transport-https ca-certificates gnupg2
 
 # Install sockaddr
@@ -57,7 +57,7 @@ VAULTVERSION=$(curl -sL https://api.releases.hashicorp.com/v1/releases/vault/lat
 echo "Install Consul"
 curl -fsL -o /tmp/consul.zip \
      "https://releases.hashicorp.com/consul/${CONSULVERSION}/consul_${CONSULVERSION}_linux_amd64.zip"
-sudo unzip -q /tmp/consul.zip -d /usr/local/bin
+sudo unzip -o -q /tmp/consul.zip -d /usr/local/bin
 sudo chmod 0755 /usr/local/bin/consul
 sudo chown root:root /usr/local/bin/consul
 
@@ -69,7 +69,7 @@ sudo mv /tmp/linux/consul.service /etc/systemd/system/consul.service
 echo "Install Vault"
 curl -fsL -o /tmp/vault.zip \
      "https://releases.hashicorp.com/vault/${VAULTVERSION}/vault_${VAULTVERSION}_linux_amd64.zip"
-sudo unzip -q /tmp/vault.zip -d /usr/local/bin
+sudo unzip -o -q /tmp/vault.zip -d /usr/local/bin
 sudo chmod 0755 /usr/local/bin/vault
 sudo chown root:root /usr/local/bin/vault
 
@@ -143,7 +143,7 @@ echo "Installing latest podman task driver"
 latest_podman=$(curl -s https://releases.hashicorp.com/nomad-driver-podman/index.json | jq --raw-output '.versions |= with_entries(select(.key|match("^\\d+\\.\\d+\\.\\d+$"))) | .versions | keys[]' | sort -rV | head -n1)
 
 wget -q -P /tmp "https://releases.hashicorp.com/nomad-driver-podman/${latest_podman}/nomad-driver-podman_${latest_podman}_linux_amd64.zip"
-sudo unzip -q "/tmp/nomad-driver-podman_${latest_podman}_linux_amd64.zip" -d "$NOMAD_PLUGIN_DIR"
+sudo unzip -o -q "/tmp/nomad-driver-podman_${latest_podman}_linux_amd64.zip" -d "$NOMAD_PLUGIN_DIR"
 sudo chmod +x "${NOMAD_PLUGIN_DIR}/nomad-driver-podman"
 
 # enable varlink socket (not included in ubuntu package)
@@ -157,12 +157,11 @@ else
     echo "nomad-driver-ecs not found: skipping install"
 fi
 
-echo "Configuring dnsmasq"
+echo "=== Configuring dnsmasq ==="
 
 # disable systemd-resolved and configure dnsmasq to forward local requests to
 # consul. the resolver files need to dynamic configuration based on the VPC
 # address and docker bridge IP, so those will be rewritten at boot time.
-
 sudo systemctl disable systemd-resolved.service
 sudo mv /tmp/linux/dnsmasq /etc/dnsmasq.d/default
 sudo chown root:root /etc/dnsmasq.d/default
@@ -172,13 +171,7 @@ sudo chown root:root /etc/dnsmasq.d/default
 echo 'nameserver 8.8.8.8' > /tmp/resolv.conf
 sudo mv /tmp/resolv.conf /etc/resolv.conf
 
-sudo mv /tmp/linux/dnsmasq.service /etc/systemd/system/dnsmasq.service
-sudo mv /tmp/linux/dnsconfig.sh /usr/local/bin/dnsconfig.sh
-sudo chmod +x /usr/local/bin/dnsconfig.sh
-sudo systemctl daemon-reload
-sudo systemctl restart systemd-resolved
 sudo systemctl restart dnsmasq
-
 echo "Updating boot parameters"
 
 # enable cgroup_memory and swap
