@@ -23,10 +23,16 @@ mkdir_for_root /srv/data # for host volumes
 
 # Dependencies
 sudo apt-get update
+echo "=== apt-get upgrade ==="
 sudo apt-get upgrade -y
+echo "=== Install awscli ec2-instance-connect ==="
+sudo apt-get install -y awscli ec2-instance-connect 
+echo "=== Read ec2-instance-connect.conf ==="
+sudo less /lib/systemd/system/ssh.service.d/ec2-instance-connect.conf
+echo "=== apt-get rest of packages ==="
 sudo apt-get install -y \
      software-properties-common \
-     dnsmasq unzip tree redis-tools jq curl tmux awscli nfs-common \
+     dnsmasq unzip tree redis-tools jq curl tmux nfs-common \
      apt-transport-https ca-certificates gnupg2
 
 # Install sockaddr
@@ -105,10 +111,10 @@ sudo add-apt-repository "deb https://download.opensuse.org/repositories/devel:/k
 sudo apt-get update
 
 echo "Installing Docker"
-sudo apt-get install -y docker-ce
+sudo apt-get install -y docker-ce --fix-missing
 
 echo "Installing Java"
-sudo apt-get install -y openjdk-8-jdk
+sudo apt-get install -y openjdk-14-jdk-headless
 
 echo "Installing CNI plugins"
 sudo mkdir -p /opt/cni/bin
@@ -117,7 +123,14 @@ wget -q -O - \
     | sudo tar -C /opt/cni/bin -xz
 
 echo "Installing Podman"
-sudo apt-get -y install podman
+echo "=== Installing Podman ==="
+echo "Podman Prep"  # https://computingforgeeks.com/how-to-install-podman-on-ubuntu/
+. /etc/os-release
+echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+curl -L "https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/Release.key" | sudo apt-key add -
+sudo apt-get update
+echo "Podman Install"
+sudo apt-get -y install podman --fix-missing 2>&1 | tee $(hostname -I | awk '{print $1}')_podman.txt  # Log the installation for debugging
 
 # get catatonit (to check podman --init switch)
 wget -q -P /tmp https://github.com/openSUSE/catatonit/releases/download/v0.1.4/catatonit.x86_64
@@ -137,13 +150,20 @@ sudo chmod +x "${NOMAD_PLUGIN_DIR}/nomad-driver-podman"
 sudo mv /tmp/linux/io.podman.service /etc/systemd/system/io.podman.service
 sudo mv /tmp/linux/io.podman.socket /etc/systemd/system/io.podman.socket
 
+if [ -a "/tmp/linux/nomad-driver-ecs" ]; then
+    echo "Installing nomad-driver-ecs"
+    sudo install --mode=0755 --owner=ubuntu /tmp/linux/nomad-driver-ecs "$NOMAD_PLUGIN_DIR"
+else
+    echo "nomad-driver-ecs not found: skipping install"
+fi
+
 echo "Configuring dnsmasq"
 
 # disable systemd-resolved and configure dnsmasq to forward local requests to
 # consul. the resolver files need to dynamic configuration based on the VPC
 # address and docker bridge IP, so those will be rewritten at boot time.
 
-# sudo systemctl disable systemd-resolved.service
+sudo systemctl disable systemd-resolved.service
 sudo mv /tmp/linux/dnsmasq /etc/dnsmasq.d/default
 sudo chown root:root /etc/dnsmasq.d/default
 
@@ -152,6 +172,10 @@ sudo chown root:root /etc/dnsmasq.d/default
 echo 'nameserver 8.8.8.8' > /tmp/resolv.conf
 sudo mv /tmp/resolv.conf /etc/resolv.conf
 
+sudo mv /tmp/linux/dnsmasq.service /etc/systemd/system/dnsmasq.service
+sudo mv /tmp/linux/dnsconfig.sh /usr/local/bin/dnsconfig.sh
+sudo chmod +x /usr/local/bin/dnsconfig.sh
+sudo systemctl daemon-reload
 sudo systemctl restart systemd-resolved
 sudo systemctl restart dnsmasq
 

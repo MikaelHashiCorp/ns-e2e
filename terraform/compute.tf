@@ -1,5 +1,5 @@
 resource "aws_instance" "server" {
-  ami                    = "ami-0ee8a4aed49bc258a"
+  ami                    = "ami-065df81c5fb4b315b"
   instance_type          = var.instance_type
   key_name               = module.keys.key_name
   vpc_security_group_ids = [aws_security_group.primary.id]
