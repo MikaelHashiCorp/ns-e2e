@@ -32,7 +32,7 @@ sudo less /lib/systemd/system/ssh.service.d/ec2-instance-connect.conf
 echo "=== apt-get rest of packages ==="
 sudo apt-get install -y \
      software-properties-common \
-     dnsmasq unzip -o tree redis-tools jq curl tmux nfs-common \
+     dnsmasq unzip tree redis-tools jq curl tmux nfs-common \
      apt-transport-https ca-certificates gnupg2
 
 # Install sockaddr
@@ -54,7 +54,7 @@ VAULTVERSION=$(curl -sL https://api.releases.hashicorp.com/v1/releases/vault/lat
 # CONSULVERSION=1.9.0
 # VAULTVERSION=1.5.4
 
-echo "Install Consul"
+echo "=== Install Consul ==="
 curl -fsL -o /tmp/consul.zip \
      "https://releases.hashicorp.com/consul/${CONSULVERSION}/consul_${CONSULVERSION}_linux_amd64.zip"
 sudo unzip -o -q /tmp/consul.zip -d /usr/local/bin
@@ -162,23 +162,28 @@ echo "=== Configuring dnsmasq ==="
 # disable systemd-resolved and configure dnsmasq to forward local requests to
 # consul. the resolver files need to dynamic configuration based on the VPC
 # address and docker bridge IP, so those will be rewritten at boot time.
+echo "---disable systemd-resolved.service ---"
 sudo systemctl disable systemd-resolved.service
+echo "--- mv and chown default ---"
 sudo mv /tmp/linux/dnsmasq /etc/dnsmasq.d/default
 sudo chown root:root /etc/dnsmasq.d/default
 
 # this is going to be overwritten at provisioning time, but we need something
 # here or we can't fetch binaries to do the provisioning
+echo "--- create resolve.conf ---"
 echo 'nameserver 8.8.8.8' > /tmp/resolv.conf
 sudo mv /tmp/resolv.conf /etc/resolv.conf
 
+echo "--- restart dnsmasq ---"
 sudo systemctl restart dnsmasq
-echo "Updating boot parameters"
+
+echo "=== Updating boot parameters ==="
 
 # enable cgroup_memory and swap
 sudo sed -i 's/GRUB_CMDLINE_LINUX="[^"]*/& cgroup_enable=memory swapaccount=1/' /etc/default/grub
 sudo update-grub
 
-echo "Configuring user shell"
+echo "=== Configuring user shell ==="
 sudo tee -a /home/ubuntu/.bashrc << 'EOF'
 IP_ADDRESS=$(/usr/local/bin/sockaddr eval 'GetPrivateIP')
 export CONSUL_RPC_ADDR=$IP_ADDRESS:8400

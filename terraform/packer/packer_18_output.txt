@@ -1,20 +1,20 @@
 [1;32mamazon-ebs.latest_ubuntu_bionic: output will be in this color.[0m
 
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Prevalidating any provided VPC information[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Prevalidating AMI Name: nomad-e2e-ubuntu-bionic-amd64-20221231043614[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Prevalidating AMI Name: nomad-e2e-ubuntu-bionic-amd64-20230101020201[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Found Image ID: ami-08fdec01f5df9998f[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Creating temporary keypair: packer_63afbc3e-0868-295e-2d29-84cb51c1316f[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Creating temporary security group for this instance: packer_63afbc41-f288-312d-3220-d00b6923d67d[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Creating temporary keypair: packer_63b0e999-f47a-c9a6-5c6c-67acfbbaba73[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Creating temporary security group for this instance: packer_63b0e99c-e6f2-1e1e-e5bb-d365330a945e[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Launching a source AWS instance...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Instance ID: i-000f878b84647400a[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Waiting for instance (i-000f878b84647400a) to become ready...[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Using SSH communicator to connect: 3.91.5.192[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Instance ID: i-094594a53d81c4726[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Waiting for instance (i-094594a53d81c4726) to become ready...[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Using SSH communicator to connect: 54.87.135.153[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Waiting for SSH to become available...[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Connected to SSH![0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Uploading ./ubuntu-bionic-amd64 => /tmp/linux[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Uploading ../config => /tmp/config[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Running local shell script: /var/folders/8m/jfxp5jf93bgcpvltj40dvmrh0000gp/T/packer-shell68082496[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Running local shell script: /var/folders/8m/jfxp5jf93bgcpvltj40dvmrh0000gp/T/packer-shell3121480345[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Provisioning with shell script: ./ubuntu-bionic-amd64/setup.sh[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB][0m
@@ -35,8 +35,8 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [53.3 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/main Translation-en [14.6 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [18.1 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [8668 B][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:21 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [2496 kB][0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:20 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [2496 kB][0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [8668 B][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:22 http://security.ubuntu.com/ubuntu bionic-security/main Translation-en [432 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:23 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [1025 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:24 http://security.ubuntu.com/ubuntu bionic-security/restricted Translation-en [142 kB][0m
@@ -44,7 +44,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:26 http://security.ubuntu.com/ubuntu bionic-security/universe Translation-en [289 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:27 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [19.1 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:28 http://security.ubuntu.com/ubuntu bionic-security/multiverse Translation-en [3908 B][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 26.6 MB in 6s (4599 kB/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 26.6 MB in 5s (4847 kB/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: === apt-get upgrade ===[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
@@ -75,7 +75,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libheimntlm0-heimdal amd64 7.5.0+dfsg-1ubuntu0.2 [14.7 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libgssapi3-heimdal amd64 7.5.0+dfsg-1ubuntu0.2 [96.3 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Preconfiguring packages ...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 6461 kB in 0s (46.9 MB/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 6461 kB in 0s (45.4 MB/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: (Reading database ... 58135 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Preparing to unpack .../00-libpython3.6_3.6.9-1~18.04ubuntu1.9_amd64.deb ...[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Unpacking libpython3.6:amd64 (3.6.9-1~18.04ubuntu1.9) over (3.6.9-1~18.04ubuntu1.8) ...[0m
@@ -110,8 +110,8 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Setting up tzdata (2022g-0ubuntu0.18.04) ...[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic:[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Current default time zone: 'Etc/UTC'[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Local time is now:      Sat Dec 31 04:37:56 UTC 2022.[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Universal Time is now:  Sat Dec 31 04:37:56 UTC 2022.[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Local time is now:      Sun Jan  1 02:03:26 UTC 2023.[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Universal Time is now:  Sun Jan  1 02:03:26 UTC 2023.[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Run 'dpkg-reconfigure tzdata' if you wish to change it.[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic:[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Setting up libroken18-heimdal:amd64 (7.5.0+dfsg-1ubuntu0.2) ...[0m
@@ -269,7 +269,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:83 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-pil amd64 5.1.0-1ubuntu0.8 [331 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:84 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-pygments all 2.2.0+dfsg-1ubuntu0.2 [574 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Preconfiguring packages ...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 33.4 MB in 1s (49.9 MB/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 33.4 MB in 1s (50.6 MB/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Selecting previously unselected package ec2-instance-connect.[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: (Reading database ... 58138 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Preparing to unpack .../00-ec2-instance-connect_1.1.12+dfsg1-0ubuntu3~18.04.2_all.deb ...[0m
@@ -700,7 +700,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 tree amd64 1.7.0-5 [40.7 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 unzip amd64 6.0-21ubuntu1.2 [168 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 gnupg2 all 2.2.4-1ubuntu1.6 [5300 B][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 1508 kB in 0s (16.8 MB/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 1508 kB in 0s (14.7 MB/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Selecting previously unselected package apt-transport-https.[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: (Reading database ... 67994 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Preparing to unpack .../00-apt-transport-https_1.6.14_all.deb ...[0m
@@ -779,7 +779,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Processing triggers for ureadahead (0.100.0-21) ...[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Processing triggers for libc-bin (2.27-3ubuntu1.6) ...[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Firewall stopped and disabled on system startup[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Install Consul[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: === Install Consul ===[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Configure Consul[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Install Vault[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Configure Vault[0m
@@ -791,34 +791,34 @@
 [1;31m==> amazon-ebs.latest_ubuntu_bionic: Warning: apt-key output should not be parsed (stdout is not a terminal)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: OK[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:3 http://security.ubuntu.com/ubuntu bionic-security InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:5 https://download.docker.com/linux/ubuntu bionic InRelease [64.4 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:6 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages [31.2 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 95.6 kB in 1s (74.5 kB/s)[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:4 https://download.docker.com/linux/ubuntu bionic InRelease[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB][0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [83.3 kB][0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:4 https://download.docker.com/linux/ubuntu bionic InRelease [64.4 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:5 http://security.ubuntu.com/ubuntu bionic-security InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:6 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic InRelease [20.8 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:7 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic/main amd64 Packages [16.7 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:8 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic/main Translation-en [1420 B][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 38.9 kB in 1s (29.7 kB/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:6 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages [31.2 kB][0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 268 kB in 1s (222 kB/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: Warning: apt-key output should not be parsed (stdout is not a terminal)[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: OK[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:5 https://download.docker.com/linux/ubuntu bionic InRelease[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:6 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic InRelease [20.8 kB][0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:7 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic/main amd64 Packages [16.7 kB][0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:8 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic/main Translation-en [1420 B][0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 38.9 kB in 1s (31.1 kB/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: Warning: apt-key output should not be parsed (stdout is not a terminal)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: OK[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:3 https://download.docker.com/linux/ubuntu bionic InRelease[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:5 http://security.ubuntu.com/ubuntu bionic-security InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:6 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:7 https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_18.04  InRelease [1613 B][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:8 https://downloadcontent2.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_18.04  Packages [7219 B][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 8832 B in 2s (3606 B/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 8832 B in 3s (3515 B/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease[0m
@@ -827,7 +827,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:5 http://security.ubuntu.com/ubuntu bionic-security InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:6 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:7 https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_18.04  InRelease [1613 B][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 1613 B in 2s (944 B/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 1613 B in 2s (918 B/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Installing Docker[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
@@ -851,7 +851,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:5 https://download.docker.com/linux/ubuntu bionic/stable amd64 docker-ce amd64 5:20.10.22~3-0~ubuntu-bionic [20.5 MB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:6 https://download.docker.com/linux/ubuntu bionic/stable amd64 docker-ce-rootless-extras amd64 5:20.10.22~3-0~ubuntu-bionic [8394 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:7 https://download.docker.com/linux/ubuntu bionic/stable amd64 docker-scan-plugin amd64 0.23.0~ubuntu-bionic [3623 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 102 MB in 6s (18.0 MB/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 102 MB in 6s (17.7 MB/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Selecting previously unselected package pigz.[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: (Reading database ... 68221 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...[0m
@@ -915,7 +915,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ca-certificates-java all 20180516ubuntu1~18.04.1 [12.2 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:10 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic/main amd64 openjdk-14-jre-headless amd64 14.0.2+12-1~18.04 [44.4 MB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:11 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic/main amd64 openjdk-14-jdk-headless amd64 14.0.2+12-1~18.04 [250 MB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 296 MB in 16s (18.0 MB/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 296 MB in 15s (19.2 MB/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Selecting previously unselected package java-common.[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: (Reading database ... 68472 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Preparing to unpack .../00-java-common_0.68ubuntu1~18.04.1_all.deb ...[0m
@@ -1136,7 +1136,7 @@
 [1;31m==> amazon-ebs.latest_ubuntu_bionic:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current[0m
 [1;31m==> amazon-ebs.latest_ubuntu_bionic:                                  Dload  Upload   Total   Spent    Left  Speed[0m
 [1;31m==> amazon-ebs.latest_ubuntu_bionic:   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Warning: apt-key output should not be parsed (stdout is not a terminal)[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: 100  1093  100  1093    0     0   2698      0 --:--:-- --:--:-- --:--:--  2698[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: 100  1093  100  1093    0     0   3282      0 --:--:-- --:--:-- --:--:--  3282[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: OK[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease[0m
@@ -1145,7 +1145,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:5 https://download.docker.com/linux/ubuntu bionic InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:6 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic InRelease[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:7 https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_18.04  InRelease [1613 B][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 1613 B in 2s (910 B/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 1613 B in 2s (916 B/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
 [1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
 [1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Translations (en) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
@@ -1189,7 +1189,7 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:17 https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_18.04  podman-machine-cni 100:0.0.0-1 [1640 kB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:18 https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_18.04  podman 100:3.4.2-5 [18.6 MB][0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Get:19 https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_18.04  containernetworking-plugins 100:1.1.1~1 [7006 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 30.9 MB in 6s (5151 kB/s)[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 30.9 MB in 7s (4125 kB/s)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Selecting previously unselected package libfuse3-3:amd64.[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: (Reading database ... 69218 files and directories currently installed.)[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Preparing to unpack .../libfuse3-3_3.9.0-3_amd64.deb ...[0m
@@ -1282,125 +1282,55 @@
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Processing triggers for libc-bin (2.27-3ubuntu1.6) ...[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: Installing latest podman task driver[0m
 [0;32m    amazon-ebs.latest_ubuntu_bionic: nomad-driver-ecs not found: skipping install[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Configuring dnsmasq[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: === Configuring dnsmasq ===[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: ---disable systemd-resolved.service ---[0m
 [1;31m==> amazon-ebs.latest_ubuntu_bionic: Removed /etc/systemd/system/multi-user.target.wants/systemd-resolved.service.[0m
 [1;31m==> amazon-ebs.latest_ubuntu_bionic: Removed /etc/systemd/system/dbus-org.freedesktop.resolve1.service.[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-16-23[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-16-23[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-16-23[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-16-23[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-16-23[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-16-23[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: Job for dnsmasq.service failed because the control process exited with error code.[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: See "systemctl status dnsmasq.service" and "journalctl -xe" for details.[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: Script exited with non-zero exit status: 1. Allowed exit codes are: [0][0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Step "StepProvision" failed[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)?[0m [1;32m==> amazon-ebs.latest_ubuntu_bionic: Uploading ./ubuntu-bionic-amd64 => /tmp/linux[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Uploading ../config => /tmp/config[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Running local shell script: /var/folders/8m/jfxp5jf93bgcpvltj40dvmrh0000gp/T/packer-shell3784060686[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Provisioning with shell script: ./ubuntu-bionic-amd64/setup.sh[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:4 https://download.docker.com/linux/ubuntu bionic InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:5 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:6 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:7 https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_18.04  InRelease [1613 B][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 90.3 kB in 1s (110 kB/s)[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Translations (en) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Translations (en) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: === apt-get upgrade ===[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Building dependency tree...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading state information...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Calculating upgrade...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: === Install awscli ec2-instance-connect ===[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Building dependency tree...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading state information...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: awscli is already the newest version (1.18.69-1ubuntu0.18.04.1).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: ec2-instance-connect is already the newest version (1.1.12+dfsg1-0ubuntu3~18.04.2).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: === Read ec2-instance-connect.conf ===[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: [Service][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: ExecStart=[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: ExecStart=/usr/sbin/sshd -D -o "AuthorizedKeysCommand /usr/share/ec2-instance-connect/eic_run_authorized_keys %%u %%f" -o "AuthorizedKeysCommandUser ec2-instance-connect" $SSHD_OPTS[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: === apt-get rest of packages ===[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Building dependency tree...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading state information...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: jq is already the newest version (1.5+dfsg-2).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: tree is already the newest version (1.7.0-5).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: ca-certificates is already the newest version (20211016ubuntu0.18.04.1).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: curl is already the newest version (7.58.0-2ubuntu3.21).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: nfs-common is already the newest version (1:1.3.4-2.1ubuntu5.5).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: software-properties-common is already the newest version (0.96.24.32.18).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: tmux is already the newest version (2.6-3ubuntu0.2).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: unzip is already the newest version (6.0-21ubuntu1.2).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: apt-transport-https is already the newest version (1.6.14).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: dnsmasq is already the newest version (2.79-1ubuntu0.6).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: gnupg2 is already the newest version (2.2.4-1ubuntu1.6).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: redis-tools is already the newest version (5:4.0.9-1ubuntu0.2).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Firewall stopped and disabled on system startup[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Install Consul[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: replace /usr/local/bin/consul? [y]es, [n]o, [A]ll, [N]one, [r]ename:  NULL[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: (EOF or read error, treating as "[N]one" ...)[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: Script exited with non-zero exit status: 1. Allowed exit codes are: [0][0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Step "StepProvision" failed[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)?[0m [1;32m==> amazon-ebs.latest_ubuntu_bionic: Uploading ./ubuntu-bionic-amd64 => /tmp/linux[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Uploading ../config => /tmp/config[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Running local shell script: /var/folders/8m/jfxp5jf93bgcpvltj40dvmrh0000gp/T/packer-shell449556361[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Provisioning with shell script: ./ubuntu-bionic-amd64/setup.sh[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [83.3 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:4 https://download.docker.com/linux/ubuntu bionic InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:5 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Hit:6 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu bionic InRelease[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Get:7 https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_18.04  InRelease [1613 B][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Fetched 262 kB in 1s (392 kB/s)[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Translations (en) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: W: Target Translations (en) is configured multiple times in /etc/apt/sources.list:60 and /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list:1[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: === apt-get upgrade ===[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Building dependency tree...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading state information...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Calculating upgrade...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: === Install awscli ec2-instance-connect ===[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading package lists...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Building dependency tree...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: Reading state information...[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: awscli is already the newest version (1.18.69-1ubuntu0.18.04.1).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: ec2-instance-connect is already the newest version (1.1.12+dfsg1-0ubuntu3~18.04.2).[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: === Read ec2-instance-connect.conf ===[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: [Service][0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: ExecStart=[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: ExecStart=/usr/sbin/sshd -D -o "AuthorizedKeysCommand /usr/share/ec2-instance-connect/eic_run_authorized_keys %%u %%f" -o "AuthorizedKeysCommandUser ec2-instance-connect" $SSHD_OPTS[0m
-[0;32m    amazon-ebs.latest_ubuntu_bionic: === apt-get rest of packages ===[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: E: Option tree: Configuration item specification must have an =<val>.[0m
-[1;31m==> amazon-ebs.latest_ubuntu_bionic: Script exited with non-zero exit status: 100. Allowed exit codes are: [0][0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: Step "StepProvision" failed[0m
-[1;32m==> amazon-ebs.latest_ubuntu_bionic: [c] Clean up and exit, [a] abort without cleanup, or [r] retry step (build may fail even if retry succeeds)?[0m [1;32m==> amazon-ebs.latest_ubuntu_bionic: Provisioning step had errors: Running the cleanup provisioner, if present...[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: --- mv and chown default ---[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: --- create resolve.conf ---[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: --- restart dnsmasq ---[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-30-204[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: === Updating boot parameters ===[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-30-204[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-30-204[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: Sourcing file `/etc/default/grub'[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: Sourcing file `/etc/default/grub.d/50-cloudimg-settings.cfg'[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: Generating grub configuration file ...[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: Found linux image: /boot/vmlinuz-5.4.0-1092-aws[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: Found initrd image: /boot/initrd.img-5.4.0-1092-aws[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: done[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: === Configuring user shell ===[0m
+[1;31m==> amazon-ebs.latest_ubuntu_bionic: sudo: unable to resolve host ip-172-31-30-204[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: IP_ADDRESS=$(/usr/local/bin/sockaddr eval 'GetPrivateIP')[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: export CONSUL_RPC_ADDR=$IP_ADDRESS:8400[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: export CONSUL_HTTP_ADDR=$IP_ADDRESS:8500[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: export VAULT_ADDR=http://$IP_ADDRESS:8200[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: export NOMAD_ADDR=http://$IP_ADDRESS:4646[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic:[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Stopping the source instance...[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Stopping instance[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Waiting for the instance to stop...[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Creating AMI nomad-e2e-ubuntu-bionic-amd64-20230101020201 from instance i-094594a53d81c4726[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: AMI: ami-0393b08d7c577981a[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Waiting for AMI to become ready...[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Skipping Enable AMI deprecation...[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Adding tags to AMI (ami-0393b08d7c577981a)...[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Tagging snapshot: snap-0c5cd9baea79d088a[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Creating AMI tags[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Adding tag: "OS": "Ubuntu"[0m
+[0;32m    amazon-ebs.latest_ubuntu_bionic: Adding tag: "Version": "Bionic"[0m
+[1;32m==> amazon-ebs.latest_ubuntu_bionic: Creating snapshot tags[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Terminating the source AWS instance...[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Cleaning up any extra volumes...[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: No volumes to clean up, skipping[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Deleting temporary security group...[0m
 [1;32m==> amazon-ebs.latest_ubuntu_bionic: Deleting temporary keypair...[0m
-[1;31mBuild 'amazon-ebs.latest_ubuntu_bionic' errored after 42 minutes 19 seconds: Script exited with non-zero exit status: 100. Allowed exit codes are: [0][0m
+[1;32mBuild 'amazon-ebs.latest_ubuntu_bionic' finished after 13 minutes 30 seconds.[0m
 
-==> Wait completed after 42 minutes 19 seconds
+==> Wait completed after 13 minutes 30 seconds
 
-==> Some builds didn't complete successfully and had errors:
---> amazon-ebs.latest_ubuntu_bionic: Script exited with non-zero exit status: 100. Allowed exit codes are: [0]
+==> Builds finished. The artifacts of successful builds are:
+--> amazon-ebs.latest_ubuntu_bionic: AMIs were created:
+us-east-1: ami-0393b08d7c577981a
 
-==> Builds finished but no artifacts were created.
