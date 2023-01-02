@@ -11,7 +11,7 @@ variable "region" {
 # https://www.packer.io/docs/builders/amazon/ebs
 source "amazon-ebs" "windows" {
   ami_name = "${var.ami_name}"
-  instance_type = "t3.medium"
+  instance_type = "t3a.medium"
   region = "${var.region}"
   source_ami_filter {
     filters = {

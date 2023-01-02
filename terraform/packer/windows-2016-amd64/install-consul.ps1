@@ -8,7 +8,7 @@ Set-Location C:\opt
 
 Try {
     $releases = "https://releases.hashicorp.com"
-    $version = "1.11.1"
+    $version = "1.14.3"
     $url = "${releases}/consul/${version}/consul_${version}_windows_amd64.zip"
 
     New-Item -ItemType Directory -Force -Path C:\opt\consul

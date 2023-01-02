@@ -1,0 +1,198 @@
+[1;32mamazon-ebs.latest_windows_2016: output will be in this color.[0m
+
+[1;32m==> amazon-ebs.latest_windows_2016: Prevalidating any provided VPC information[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Prevalidating AMI Name: nomad-e2e-windows-2016-amd64-20230101235711[0m
+[0;32m    amazon-ebs.latest_windows_2016: Found Image ID: ami-0db0a93f937948bf7[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Creating temporary keypair: packer_63b21dd7-c6aa-475c-0a90-91ecbf6c97b9[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Creating temporary security group for this instance: packer_63b21dda-e14d-3de4-18d7-a6bf3a104c25[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Launching a source AWS instance...[0m
+[0;32m    amazon-ebs.latest_windows_2016: Instance ID: i-0ef9ef922f0957a08[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Waiting for instance (i-0ef9ef922f0957a08) to become ready...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Using SSH communicator to connect: 54.157.12.87[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Waiting for SSH to become available...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Connected to SSH![0m
+[1;32m==> amazon-ebs.latest_windows_2016: Provisioning with Powershell...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Provisioning with powershell script: windows-2016-amd64/disable-windows-updates.ps1[0m
+[0;32m    amazon-ebs.latest_windows_2016: Automatic Windows Updates disabled.[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Provisioning with powershell script: windows-2016-amd64/fix-tls.ps1[0m
+[0;32m    amazon-ebs.latest_windows_2016: TLS hardened.[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Provisioning with powershell script: windows-2016-amd64/install-nuget.ps1[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: Name                           Version          Source           Summary[0m
+[0;32m    amazon-ebs.latest_windows_2016: ----                           -------          ------           -------[0m
+[0;32m    amazon-ebs.latest_windows_2016: nuget                          2.8.5.208        https://onege... NuGet provi...[0m
+[0;32m    amazon-ebs.latest_windows_2016: Installed NuGet.[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Provisioning with powershell script: windows-2016-amd64/install-docker.ps1[0m
+[0;32m    amazon-ebs.latest_windows_2016: Installing containers feature.[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: Success Restart Needed Exit Code      Feature Result[0m
+[0;32m    amazon-ebs.latest_windows_2016: ------- -------------- ---------      --------------[0m
+[0;32m    amazon-ebs.latest_windows_2016: True    Yes            SuccessRest... {Containers}[0m
+[0;32m    amazon-ebs.latest_windows_2016: WARNING: You must restart this server to finish the installation process.[0m
+[0;32m    amazon-ebs.latest_windows_2016: Creating user for Docker.[0m
+[0;32m    amazon-ebs.latest_windows_2016: The command completed successfully.[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: The command completed successfully.[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: Installing Docker.[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: FastPackageReference : DockerDefault|#|Docker|#|20.10.9|#|Contains Docker EE[0m
+[0;32m    amazon-ebs.latest_windows_2016:                        for use with Windows Server.|#|2022-01-06T14:18:22|#|htt[0m
+[0;32m    amazon-ebs.latest_windows_2016:                        ps://dockermsft.azureedge.net/dockercontainer/docker-20-[0m
+[0;32m    amazon-ebs.latest_windows_2016:                        10-9.zip|#|85540864|#|B854D3A3EFC159877F8C7E740268F8C4CF[0m
+[0;32m    amazon-ebs.latest_windows_2016:                        DFA6B746E7B331F39EBD2EC91E259F[0m
+[0;32m    amazon-ebs.latest_windows_2016: ProviderName         : DockerMsftProvider[0m
+[0;32m    amazon-ebs.latest_windows_2016: Source               : DockerDefault[0m
+[0;32m    amazon-ebs.latest_windows_2016: Status               : Installed[0m
+[0;32m    amazon-ebs.latest_windows_2016: SearchKey            :[0m
+[0;32m    amazon-ebs.latest_windows_2016: FullPath             :[0m
+[0;32m    amazon-ebs.latest_windows_2016: PackageFilename      :[0m
+[0;32m    amazon-ebs.latest_windows_2016: FromTrustedSource    : False[0m
+[0;32m    amazon-ebs.latest_windows_2016: Summary              : Contains Docker EE for use with Windows Server.[0m
+[0;32m    amazon-ebs.latest_windows_2016: SwidTags             : {Docker}[0m
+[0;32m    amazon-ebs.latest_windows_2016: CanonicalId          : dockermsftprovider:Docker/20.10.9#DockerDefault[0m
+[0;32m    amazon-ebs.latest_windows_2016: Metadata             : {summary}[0m
+[0;32m    amazon-ebs.latest_windows_2016: SwidTagText          : <?xml version="1.0" encoding="utf-16" standalone="yes"?>[0m
+[0;32m    amazon-ebs.latest_windows_2016:                        <SoftwareIdentity[0m
+[0;32m    amazon-ebs.latest_windows_2016:                          name="Docker"[0m
+[0;32m    amazon-ebs.latest_windows_2016:                          version="20.10.9"[0m
+[0;32m    amazon-ebs.latest_windows_2016:                          versionScheme="MultiPartNumeric" xmlns="http://standar[0m
+[0;32m    amazon-ebs.latest_windows_2016:                        ds.iso.org/iso/19770/-2/2015/schema.xsd">[0m
+[0;32m    amazon-ebs.latest_windows_2016:                          <Meta[0m
+[0;32m    amazon-ebs.latest_windows_2016:                            summary="Contains Docker EE for use with Windows[0m
+[0;32m    amazon-ebs.latest_windows_2016:                        Server." />[0m
+[0;32m    amazon-ebs.latest_windows_2016:                        </SoftwareIdentity>[0m
+[0;32m    amazon-ebs.latest_windows_2016: Dependencies         : {}[0m
+[0;32m    amazon-ebs.latest_windows_2016: IsCorpus             :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Name                 : Docker[0m
+[0;32m    amazon-ebs.latest_windows_2016: Version              : 20.10.9[0m
+[0;32m    amazon-ebs.latest_windows_2016: VersionScheme        : MultiPartNumeric[0m
+[0;32m    amazon-ebs.latest_windows_2016: TagVersion           :[0m
+[0;32m    amazon-ebs.latest_windows_2016: TagId                :[0m
+[0;32m    amazon-ebs.latest_windows_2016: IsPatch              :[0m
+[0;32m    amazon-ebs.latest_windows_2016: IsSupplemental       :[0m
+[0;32m    amazon-ebs.latest_windows_2016: AppliesToMedia       :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Meta                 : {{summary}}[0m
+[0;32m    amazon-ebs.latest_windows_2016: Links                : {}[0m
+[0;32m    amazon-ebs.latest_windows_2016: Entities             : {}[0m
+[0;32m    amazon-ebs.latest_windows_2016: Payload              :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Evidence             :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Culture              :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Attributes           : {name,version,versionScheme}[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: Installed Docker.[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Uploading ../config => /opt[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Uploading ./windows-2016-amd64/provision.ps1 => /opt/provision.ps1[0m
+[0;32m    amazon-ebs.latest_windows_2016: provision.ps1[0m 7.16 KiB / 7.16 KiB [==========================================================================] 100.00%
+[1A[0;32m    amazon-ebs.latest_windows_2016: provision.ps1[0m 7.16 KiB / 7.16 KiB [==========================================================================] 100.00%
+[1A[0;32m    amazon-ebs.latest_windows_2016: provision.ps1[0m 7.16 KiB / 7.16 KiB [==========================================================================] 100.00%
+[1A[0;32m    amazon-ebs.latest_windows_2016: provision.ps1[0m 7.16 KiB / 7.16 KiB [==========================================================================] 100.00%
+[1A[0;32m    amazon-ebs.latest_windows_2016: provision.ps1[0m 7.16 KiB / 7.16 KiB [==========================================================================] 100.00%
+[1A[0;32m    amazon-ebs.latest_windows_2016: provision.ps1[0m 7.16 KiB / 7.16 KiB [=======================================================================] 100.00% 1s
+[1;32m==> amazon-ebs.latest_windows_2016: Provisioning with Powershell...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Provisioning with powershell script: /var/folders/8m/jfxp5jf93bgcpvltj40dvmrh0000gp/T/powershell-provisioner3932697935[0m
+[0;32m    amazon-ebs.latest_windows_2016: 1.4.3 not previously installed[0m
+[0;32m    amazon-ebs.latest_windows_2016: Downloading Nomad from: https://releases.hashicorp.com/nomad/1.4.3/nomad_1.4.3_windows_amd64.zip[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016:     Directory: C:\opt[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: Mode                LastWriteTime         Length Name[0m
+[0;32m    amazon-ebs.latest_windows_2016: ----                -------------         ------ ----[0m
+[0;32m    amazon-ebs.latest_windows_2016: d-----         1/2/2023  12:05 AM                nomad.d[0m
+[0;32m    amazon-ebs.latest_windows_2016: d-----         1/2/2023  12:05 AM                nomad[0m
+[0;32m    amazon-ebs.latest_windows_2016: Installed Nomad.[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: Caption                 :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Description             :[0m
+[0;32m    amazon-ebs.latest_windows_2016: ElementName             : Nomad HTTP Inbound[0m
+[0;32m    amazon-ebs.latest_windows_2016: InstanceID              : {de6c419b-6fb4-4914-8874-55e6d456a35d}[0m
+[0;32m    amazon-ebs.latest_windows_2016: CommonName              :[0m
+[0;32m    amazon-ebs.latest_windows_2016: PolicyKeywords          :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Enabled                 : True[0m
+[0;32m    amazon-ebs.latest_windows_2016: PolicyDecisionStrategy  : 2[0m
+[0;32m    amazon-ebs.latest_windows_2016: PolicyRoles             :[0m
+[0;32m    amazon-ebs.latest_windows_2016: ConditionListType       : 3[0m
+[0;32m    amazon-ebs.latest_windows_2016: CreationClassName       : MSFT|FW|FirewallRule|{de6c419b-6fb4-4914-8874-55e6d45[0m
+[0;32m    amazon-ebs.latest_windows_2016:                           6a35d}[0m
+[0;32m    amazon-ebs.latest_windows_2016: ExecutionStrategy       : 2[0m
+[0;32m    amazon-ebs.latest_windows_2016: Mandatory               :[0m
+[0;32m    amazon-ebs.latest_windows_2016: PolicyRuleName          :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Priority                :[0m
+[0;32m    amazon-ebs.latest_windows_2016: RuleUsage               :[0m
+[0;32m    amazon-ebs.latest_windows_2016: SequencedActions        : 3[0m
+[0;32m    amazon-ebs.latest_windows_2016: SystemCreationClassName :[0m
+[0;32m    amazon-ebs.latest_windows_2016: SystemName              :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Action                  : Allow[0m
+[0;32m    amazon-ebs.latest_windows_2016: Direction               : Inbound[0m
+[0;32m    amazon-ebs.latest_windows_2016: DisplayGroup            :[0m
+[0;32m    amazon-ebs.latest_windows_2016: DisplayName             : Nomad HTTP Inbound[0m
+[0;32m    amazon-ebs.latest_windows_2016: EdgeTraversalPolicy     : Block[0m
+[0;32m    amazon-ebs.latest_windows_2016: EnforcementStatus       : NotApplicable[0m
+[0;32m    amazon-ebs.latest_windows_2016: LocalOnlyMapping        : False[0m
+[0;32m    amazon-ebs.latest_windows_2016: LooseSourceMapping      : False[0m
+[0;32m    amazon-ebs.latest_windows_2016: Owner                   :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Platforms               : {}[0m
+[0;32m    amazon-ebs.latest_windows_2016: PolicyStoreSource       : PersistentStore[0m
+[0;32m    amazon-ebs.latest_windows_2016: PolicyStoreSourceType   : Local[0m
+[0;32m    amazon-ebs.latest_windows_2016: PrimaryStatus           : OK[0m
+[0;32m    amazon-ebs.latest_windows_2016: Profiles                : 7[0m
+[0;32m    amazon-ebs.latest_windows_2016: RuleGroup               :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Status                  : The rule was parsed successfully from the store.[0m
+[0;32m    amazon-ebs.latest_windows_2016:                           (65536)[0m
+[0;32m    amazon-ebs.latest_windows_2016: StatusCode              : 65536[0m
+[0;32m    amazon-ebs.latest_windows_2016: PSComputerName          :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Name                    : {de6c419b-6fb4-4914-8874-55e6d456a35d}[0m
+[0;32m    amazon-ebs.latest_windows_2016: ID                      : {de6c419b-6fb4-4914-8874-55e6d456a35d}[0m
+[0;32m    amazon-ebs.latest_windows_2016: Group                   :[0m
+[0;32m    amazon-ebs.latest_windows_2016: Profile                 : Domain, Private, Public[0m
+[0;32m    amazon-ebs.latest_windows_2016: Platform                : {}[0m
+[0;32m    amazon-ebs.latest_windows_2016: LSM                     : False[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: Status      : Stopped[0m
+[0;32m    amazon-ebs.latest_windows_2016: Name        : Nomad[0m
+[0;32m    amazon-ebs.latest_windows_2016: DisplayName : Nomad[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Restarting Machine[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Waiting for machine to restart...[0m
+[1;31m==> amazon-ebs.latest_windows_2016: A system shutdown is in progress.(1115)[0m
+[0;32m    amazon-ebs.latest_windows_2016: EC2AMAZ-L1F9OC3 restarted.[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Machine successfully restarted, moving on[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Provisioning with Powershell...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Provisioning with powershell script: /var/folders/8m/jfxp5jf93bgcpvltj40dvmrh0000gp/T/powershell-provisioner2385059897[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: TaskPath                                       TaskName[0m
+[0;32m    amazon-ebs.latest_windows_2016: --------                                       --------[0m
+[0;32m    amazon-ebs.latest_windows_2016: \                                              Amazon Ec2 Launch - Windows i...[0m
+[0;32m    amazon-ebs.latest_windows_2016: \                                              Amazon Ec2 Launch - Instance ...[0m
+[0;32m    amazon-ebs.latest_windows_2016:[0m
+[0;32m    amazon-ebs.latest_windows_2016: administrator@EC2AMAZ-L1F9OC3 C:\Users\Administrator>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 1 /f[0m
+[0;32m    amazon-ebs.latest_windows_2016: The operation completed successfully.[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Stopping the source instance...[0m
+[0;32m    amazon-ebs.latest_windows_2016: Stopping instance[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Waiting for the instance to stop...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Creating AMI nomad-e2e-windows-2016-amd64-20230101235711 from instance i-0ef9ef922f0957a08[0m
+[0;32m    amazon-ebs.latest_windows_2016: AMI: ami-0226ace9453777822[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Waiting for AMI to become ready...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Skipping Enable AMI deprecation...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Adding tags to AMI (ami-0226ace9453777822)...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Tagging snapshot: snap-0c8ae43ec80c68ab0[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Creating AMI tags[0m
+[0;32m    amazon-ebs.latest_windows_2016: Adding tag: "OS": "Windows2016"[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Creating snapshot tags[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Terminating the source AWS instance...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Cleaning up any extra volumes...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: No volumes to clean up, skipping[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Deleting temporary security group...[0m
+[1;32m==> amazon-ebs.latest_windows_2016: Deleting temporary keypair...[0m
+[1;32mBuild 'amazon-ebs.latest_windows_2016' finished after 17 minutes 38 seconds.[0m
+
+==> Wait completed after 17 minutes 38 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> amazon-ebs.latest_windows_2016: AMIs were created:
+us-east-1: ami-0226ace9453777822
+

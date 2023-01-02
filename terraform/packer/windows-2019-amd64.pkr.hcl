@@ -3,12 +3,23 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 source "amazon-ebs" "latest_windows_2019" {
   ami_name       = "nomad-e2e-windows-2019-amd64-${local.timestamp}"
   communicator   = "ssh"
-  instance_type  = "t2.medium"
+  instance_type  = "t3a.medium"
   region         = "us-east-1"
   user_data_file = "windows-2019-amd64/userdata.ps1" # enables ssh
   ssh_timeout    = "10m"
   ssh_username   = "Administrator"
-  source_ami     = "ami-02e188c5eabfa5c8d"
+  # source_ami     = "ami-02e188c5eabfa5c8d"
+  
+    source_ami_filter {
+    filters = {
+      name                = "Windows_Server-2019-English-Full-Base-*"
+      root-device-type    = "ebs"
+      virtualization-type = "hvm"
+    }
+    most_recent = true
+    owners      = ["amazon"]
+  }
+  
   tags = {
     OS = "Windows2019"
   }
@@ -22,6 +33,7 @@ build {
       "windows-2019-amd64/disable-windows-updates.ps1",
       "windows-2019-amd64/fix-tls.ps1",
       "windows-2019-amd64/install-nuget.ps1"
+#       "windows-2019-amd64/install-docker.ps1"
     ]
   }
 
@@ -56,7 +68,7 @@ build {
   }
 
   provisioner "powershell" {
-    inline = ["/opt/provision-2019.ps1 -nomad_version 1.2.6 -nostart"]
+    inline = ["/opt/provision-2019.ps1 -nomad_version 1.4.3 -nostart"]
   }
 
   provisioner "powershell" {
