@@ -48,53 +48,6 @@ function Usage {
     Write-Output "${usage}"
 }
 
-function InstallFromS3 {
-
-    Try {
-        # check that we don't already have this version
-        if (C:\opt\nomad.exe -version `
-          | Select-String -Pattern $nomad_sha -SimpleMatch -Quiet) {
-              Write-Output "${nomad_sha} already installed"
-              return
-          }
-    } Catch {
-        Write-Output "${nomad_sha} not previously installed"
-    }
-
-    Stop-Service -Name nomad -ErrorAction Ignore
-
-    $build_folder = "builds-oss"
-    if ($enterprise) {
-        $build_folder = "builds-ent"
-    }
-    $key = "${build_folder}/nomad_${platform}_${nomad_sha}.zip"
-
-    Write-Output "Downloading Nomad from s3: $key"
-    Try {
-        Remove-Item -Path ./nomad.zip -Force -ErrorAction Ignore
-        Read-S3Object -BucketName nomad-team-dev-test-binaries `
-          -Key $key -File ./nomad.zip -ErrorAction Stop
-
-        Remove-Item -Path $install_path -Force -ErrorAction Stop
-        Expand-Archive ./nomad.zip ./ -Force -ErrorAction Stop
-        Move-Item `
-          -Path .\pkg\windows_amd64\nomad.exe `
-          -Destination $install_path -Force -ErrorAction Stop
-        Remove-Item -Path nomad.zip -Force -ErrorAction Ignore
-
-        New-Item -ItemType Directory -Force -Path C:\opt\nomad.d -ErrorAction Stop
-        New-Item -ItemType Directory -Force -Path C:\opt\nomad -ErrorAction Stop
-    } Catch {
-        Write-Output "Failed to install Nomad."
-        Write-Output $_
-        Write-Host $_.ScriptStackTrace
-        $host.SetShouldExit(-1)
-        throw
-    }
-
-    Write-Output "Installed Nomad."
-}
-
 function InstallFromUploadedBinary {
 
     Stop-Service -Name nomad -ErrorAction Ignore
